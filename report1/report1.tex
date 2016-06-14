@@ -1,0 +1,60 @@
+\documentclass[a4paper,12pt]{jarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage{comment}
+\usepackage{sty/rsj2011e}
+
+\setlength{\hoffset}{0cm}
+\setlength{\oddsidemargin}{-3mm}
+\setlength{\evensidemargin}{-3cm}
+\setlength{\marginparsep}{0cm}
+\setlength{\marginparwidth}{0cm}
+\setlength{\textheight}{24.7cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-45pt}
+
+\renewcommand{\baselinestretch}{1.6}
+\renewcommand{\floatpagefraction}{1}
+\renewcommand{\topfraction}{1}
+\renewcommand{\bottomfraction}{1}
+\renewcommand{\textfraction}{0}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+%\renewcommand{\figurename}{Fig.} %図をFig.にする
+
+\begin{comment}
+%図のキャプションからコロン：を消す
+\makeatletter
+\long\def\@makecaption#1#2{% #1=図表番号、#2=キャプション本文
+\sbox\@tempboxa{#1.　#2}
+\ifdim \wd\@tempboxa >\hsize
+#1 #2\par 
+\else
+\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}
+\fi}
+\makeatother
+% 
+\end{comment}
+
+\begin{document}
+%
+\title{知能システム学特論レポート（第hdp3班）\\ 2016年6月16日}
+%
+\maketitle
+%
+%%%%%%%%%%%%%%%%%%%
+\section{出席者}
+%%%%%%%%%%%%%%%%%%
+16344203 井上 聖也\\
+~~~16344216 田中良道\\
+~~~16344217 津上 祐典\\
+~~~16344229 沈 歩偉
+%%%%%%%%%%%%%%%%%%%
+\section{進捗状況}
+%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+\section{その他}
+%%%%%%%%%%%%%%%%%
+
+\end{document}
