@@ -15,28 +15,26 @@ from pyspark.mllib.regression import LabeledPoint
 from pyspark.mllib.classification import SVMWithSGD
 from pyspark.mllib.evaluation import MulticlassMetrics
 from pyspark.mllib.classification import NaiveBayes, NaiveBayesModel
-from pyspark.mllib.linalg import Vectors
-from pyspark.mllib.regression import LabeledPoint
 
-
-
-
-P = os.path.abspath(os.path.dirname(__file__))# スクリプトのあるディレクトリへの絶対パス取得
+#P = os.path.abspath(os.path.dirname(__file__))# スクリプトのあるディレクトリへの絶対パス取得
 sc = SparkContext()
 
 #データ読み込み
-spam = np.loadtxt('{}/spam.csv'.format(P),delimiter=',')
-spam = sc.parallelize(spam)
+#spam = np.loadtxt('{}/spam.csv'.format(P),delimiter=',')
+#spam = sc.parallelize(spam)
 
-ham = np.loadtxt('{}/ham.csv'.format(P),delimiter=',')
-ham = sc.parallelize(ham)
+#ham = np.loadtxt('{}/ham.csv'.format(P),delimiter=',')
+#ham = sc.parallelize(ham)
+
+spam = sc.textFile("hdfs:///spark/spam.csv")
+ham  = sc.textFile("hdfs:///spark/ham.csv")
 
 def parsePoint(vec):
     return LabeledPoint(vec[-1], vec[0:-1])
 
 #RDDデータの振り分け?
-spamData = spam.map(parsePoint)
-hamData = ham.map(parsePoint)
+spamData = spam.map(lambda qwe : qwe.split(',')).map(parsePoint)
+hamData = ham.map(lambda qwe : qwe.split(',')).map(parsePoint)
 
 #訓練データ、テストデータに分ける
 weights = [0.7,0.3]#訓練:テスト　の比率
@@ -56,10 +54,9 @@ train.cache()#訓練データをキャッシュ
 res = test.map(lambda data: model.predict(data.features))
 
 #モデルを学習
-#model = LogisticRegressionWithLBFGS.train(train,10)#ロジスティック回帰(L-BFGS)で
+model = LogisticRegressionWithLBFGS.train(train,10)#ロジスティック回帰(L-BFGS)で
 #model = SVMWithSGD.train(train,5000)#SVMで
-model = NaiveBayes.train(train, 10.0)
-
+model = NaiveBayes.train(train, 10.0) #naivebayes
 
 #print(len(np.array(model.weights)))
 
@@ -67,18 +64,18 @@ model = NaiveBayes.train(train, 10.0)
 Re_l = res.collect()
 
 #評価用に(推定ラベル,正解ラベル)のペアのタプルが並んだリストを生成
-hako = []
-for i,v in enumerate(test.collect()):
-    hako.append((float(Re_l[i]), v.label))
-
+#hako = []
+#for i,v in enumerate(test.collect()):
+#    hako.append((float(Re_l[i]), v.label))
+#
 #そのリストをspark用に変換,メトリクスのクラスに渡す
-predictionAndLabels = sc.parallelize(hako)
+predictionAndLabels = test.map(lambda lp: (float(model.predict(lp.features)), lp.label))
 metrics = MulticlassMetrics(predictionAndLabels)
 
 #メトリクスのメソッドを使って再現率と適合率を計算＆出力
 print("-------------------------------------")
-print("recall = {}".format(metrics.recall(0.)))#スパムメールの検出率
-print("precision = {}".format(metrics.precision(0.)))#スパムでないメールの認識率
+#print("recall = {}".format(metrics.recall(0.)))#スパムメールの検出率
+#print("precision = {}".format(metrics.precision(0.)))#スパムでないメールの認識率
 print("-------------------------------------")
 
 sc.stop()
