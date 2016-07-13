@@ -1,0 +1,80 @@
+\documentclass[a4paper,12pt]{jarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage{comment}
+
+\setlength{\hoffset}{0cm}
+\setlength{\oddsidemargin}{-3mm}
+\setlength{\evensidemargin}{-3cm}
+\setlength{\marginparsep}{0cm}
+\setlength{\marginparwidth}{0cm}
+\setlength{\textheight}{24.7cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-45pt}
+
+\renewcommand{\baselinestretch}{1.6}
+\renewcommand{\floatpagefraction}{1}
+\renewcommand{\topfraction}{1}
+\renewcommand{\bottomfraction}{1}
+\renewcommand{\textfraction}{0}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+%\renewcommand{\figurename}{Fig.} %図をFig.にする
+
+\begin{comment}
+%図のキャプションからコロン：を消す
+\makeatletter
+\long\def\@makecaption#1#2{% #1=図表番号、#2=キャプション本文
+\sbox\@tempboxa{#1.　#2}
+\ifdim \wd\@tempboxa >\hsize
+#1 #2\par 
+\else
+\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}
+\fi}
+\makeatother
+% 
+\end{comment}
+
+\begin{document}
+%
+\title{\vspace{-30mm}知能システム学特論レポート（第hdp2班）\\ 2016年7月14日（中間発表）}
+\date{}
+%
+%
+\maketitle
+%
+\vspace{-30mm}
+%
+%%%%%%%%%%%%%%%%%%%
+\section{出席者}
+%%%%%%%%%%%%%%%%%%
+16344203 井上 聖也\\
+~~~16344216 田中 良道\\
+~~~16344217 津上 祐典\\
+~~~16344229 沈 歩偉
+%%%%%%%%%%%%%%%%%%%
+\section{概要}
+%%%%%%%%%%%%%%%%%%%
+
+\subsection{Hadoopとは}
+
+\subsection{Sparkとは}
+
+\subsection{機械学習のテーマ}
+学習テーマはスパムメールの分類とした．データセットとしてSpambase Data
+Setを用いた．このデータセットは1813通のスパムメールと2788通の非スパムメー
+ルから構成されており，すでに57次元のベクトルとして特徴量が抽出済みである．
+学習アルゴリズムとして，ロジスティック回帰，ナイーブベイズを使用した．ロ
+ジスティック回帰とは，識別関数としてシグモイド関数を用いた回帰モデルであ
+る．パラメータを決定する際には確率的勾配法や最急降下法，準ニュートン法な
+どが挙げられる．ナイーブベイズとは，ベイズの定理を用いた分類アルゴリズム
+である．パラメータ推定には最尤法が用いられている．
+
+
+\subsection{結果と考察}
+
+%%%%%%%%%%%%%%%%%%
+\section{今後の展望}
+%%%%%%%%%%%%%%%%%
+
+\end{document}
