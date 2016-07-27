@@ -1,0 +1,72 @@
+\documentclass[a4paper,12pt]{jarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage{comment}
+
+\setlength{\hoffset}{0cm}
+\setlength{\oddsidemargin}{-3mm}
+\setlength{\evensidemargin}{-3cm}
+\setlength{\marginparsep}{0cm}
+\setlength{\marginparwidth}{0cm}
+\setlength{\textheight}{24.7cm}
+\setlength{\textwidth}{17cm}
+\setlength{\topmargin}{-45pt}
+
+\renewcommand{\baselinestretch}{1.6}
+\renewcommand{\floatpagefraction}{1}
+\renewcommand{\topfraction}{1}
+\renewcommand{\bottomfraction}{1}
+\renewcommand{\textfraction}{0}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+%\renewcommand{\figurename}{Fig.} %図をFig.にする
+
+\begin{comment}
+%図のキャプションからコロン：を消す
+\makeatletter
+\long\def\@makecaption#1#2{% #1=図表番号、#2=キャプション本文
+\sbox\@tempboxa{#1.　#2}
+\ifdim \wd\@tempboxa >\hsize
+#1 #2\par 
+\else
+\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}
+\fi}
+\makeatother
+% 
+\end{comment}
+
+\begin{document}
+%
+\title{\vspace{-30mm}知能システム学特論レポート（第hdp2班）\\ 2016年7月28日}
+\date{}
+%
+%
+\maketitle
+%
+\vspace{-30mm}
+%
+%%%%%%%%%%%%%%%%%%%
+\section{出席者}
+%%%%%%%%%%%%%%%%%%
+16344203 井上 聖也\\
+~~~16344216 田中 良道\\
+~~~16344217 津上 祐典\\
+~~~16344229 沈 歩偉
+%%%%%%%%%%%%%%%%%%%
+\section{進捗状況}
+%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+ \item 新しいデータセットの特徴量を抽出した．
+ \item プログラムを実行し，スタンドアローン下では実行時間が増えたが完全
+	   分散下では時間があまり変わらなかった．
+ \item データ数がもう少し増やせば完全分散下の方が早くなる？
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%
+\section{その他}
+%%%%%%%%%%%%%%%%%
+\begin{itemize}
+ \item データを増やす？
+\end{itemize}
+
+\end{document}

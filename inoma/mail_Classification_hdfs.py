@@ -3,7 +3,7 @@
 
 """
 メール分類用プログラム
-ソースコードと同じディレクトリにデータセットspam.csv,ham.csvがある前提
+データをhdfsから読み込む
 """
 
 import os
@@ -32,9 +32,15 @@ ham  = sc.textFile("hdfs:///spark/ham.csv")
 def parsePoint(vec):
     return LabeledPoint(vec[-1], vec[0:-1])
 
+def forfloat(arr):
+    tmp = []
+    for x in arr:
+        tmp.append(float(x))
+    return tmp
+
 #RDDデータの振り分け?
-spamData = spam.map(lambda qwe : qwe.split(',')).map(parsePoint)
-hamData = ham.map(lambda qwe : qwe.split(',')).map(parsePoint)
+spamData = spam.map(lambda qwe : qwe.split(',')).map(lambda x : forfloat(x)).map(parsePoint)
+hamData = ham.map(lambda qwe : qwe.split(',')).map(lambda x : forfloat(x)).map(parsePoint)
 
 #訓練データ、テストデータに分ける
 weights = [0.7,0.3]#訓練:テスト　の比率
@@ -54,9 +60,10 @@ train.cache()#訓練データをキャッシュ
 res = test.map(lambda data: model.predict(data.features))
 
 #モデルを学習
-model = LogisticRegressionWithLBFGS.train(train,10)#ロジスティック回帰(L-BFGS)で
-#model = SVMWithSGD.train(train,5000)#SVMで
-model = NaiveBayes.train(train, 10.0) #naivebayes
+#model = LogisticRegressionWithLBFGS.train(train,10)#ロジスティック回帰(L-BFGS)で
+model = LogisticRegressionWithLBFGS.train(train,25,regParam=0.0002,regType="l1")
+#model = SVMWithSGD.train(train,5000,regParam=0.005,regType="l2")#SVM(SGD)で
+#model = NaiveBayes.train(train,1.)#ナイベで
 
 #print(len(np.array(model.weights)))
 
@@ -70,12 +77,20 @@ Re_l = res.collect()
 #
 #そのリストをspark用に変換,メトリクスのクラスに渡す
 predictionAndLabels = test.map(lambda lp: (float(model.predict(lp.features)), lp.label))
+##7_12変更
 metrics = MulticlassMetrics(predictionAndLabels)
+
+metrics2 = BinaryClassificationMetrics(predictionAndLabels)
+
 
 #メトリクスのメソッドを使って再現率と適合率を計算＆出力
 print("-------------------------------------")
-#print("recall = {}".format(metrics.recall(0.)))#スパムメールの検出率
-#print("precision = {}".format(metrics.precision(0.)))#スパムでないメールの認識率
-print("-------------------------------------")
+print("under PR = {}".format(metrics2.areaUnderPR))
+#print("under ROC = {}".format(metrics2.areaUnderROC))
+
+print("precision of ham = {}".format(metrics.precision(0.)))
+print("precision of spam = {}".format(metrics.precision(1.)))
+print("recall of ham = {}".format(metrics.recall(0.)))#スパムでないメールの認識率
+print("recall of spam = {}".format(metrics.recall(1.)))#スパムメールの検出率
 
 sc.stop()
