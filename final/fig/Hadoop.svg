@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Hadoop.svg">
+   sodipodi:docname="Hadoop.eps">
   <defs
      id="defs4">
     <marker
@@ -93,9 +93,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="154.7715"
-     inkscape:cy="403.9334"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="345.51191"
+     inkscape:cy="427.38436"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -170,7 +170,7 @@
            height="61"
            x="263"
            y="622.36218" /></flowRegion><flowPara
-         id="flowPara3795"></flowPara></flowRoot>    <rect
+         id="flowPara3795" /></flowRoot>    <rect
        y="658.29114"
        x="-254.07103"
        height="88.142052"
@@ -261,7 +261,7 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:none"
-       d="m -54,657.36218 104,-126"
+       d="m -52,653.36218 104,-126"
        id="path3928-9"
        inkscape:connector-curvature="0" />
     <path

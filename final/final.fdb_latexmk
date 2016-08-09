@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1470382821 "final.dvi" "final.pdf" "final" 1470382822
-  "final.dvi" 1470382821 11380 fde13f733aee54097119be803ed3fc51 "latex"
+["dvipdf"] 1470733188 "final.dvi" "final.pdf" "final" 1470733189
+  "final.dvi" 1470733188 13296 e2a237e2c12b521f2f77b0e84775eb92 "latex"
   (generated)
   "final.pdf"
-["latex"] 1470382821 "final.tex" "final.dvi" "final" 1470382822
+["latex"] 1470733188 "final.tex" "final.dvi" "final" 1470733189
   "/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty" 1463608860 8253 473e0e41f9adadb1977e8631b8f72ea6 ""
   "/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty" 1463608860 18425 5b3c0c59d76fac78978b5558e83c1f36 ""
   "/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1456875012 2210 5c54ab129b848a5071554186d0168766 ""
@@ -22,9 +22,12 @@
   "/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.sty" 1167176009 15188 91281c7ddbccfa54a8e0c3b56ab5aa72 ""
   "/usr/local/texlive/2016/texmf-dist/tex/platex/base/jarticle.cls" 1462837567 25231 a08460ff81096cb3e80d7be01474f985 ""
   "/usr/local/texlive/2016/texmf-dist/tex/platex/base/jsize12.clo" 1462837567 9323 83bc23d71b08185a5a9548b5c60c8249 ""
-  "final.aux" 1470382821 1315 dbaea2a42541e69f4dc3ce21a8f322d3 ""
-  "final.tex" 1470382819 8456 7a9a09bebf58270bb23f8212d904be6c ""
+  "fig/Hadoop.eps" 1470705624 18051 a8d78b16bd5f6f4a909a521b14c38261 ""
+  "fig/MapReduce.eps" 1470708184 27091 6edbdcc9feca2ed21e4055ae1152a87d ""
+  "fig/sigmoid.eps" 1470729959 16410 85a23eb7e81eda870c6fc225822e70a0 ""
+  "final.aux" 1470733188 2037 6f2f5da0ba879478aedd261a89fc6b60 ""
+  "final.tex" 1470733187 9895 6cbd6a3039f264f75a719d5eb33e11e4 ""
   (generated)
+  "final.aux"
   "final.dvi"
   "final.log"
-  "final.aux"
