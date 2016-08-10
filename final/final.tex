@@ -3,6 +3,8 @@
 \usepackage{amsmath}
 \usepackage{subfigure}
 \usepackage{comment}
+\usepackage{array}
+
 
 \setlength{\hoffset}{0cm}
 \setlength{\oddsidemargin}{-3mm}
@@ -228,8 +230,9 @@ ACU(PR)& 0.8859 &0.9123 \\ \hline
 %%%%%%%%%%%%%%%%%%%
 \section{感想}
 %%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%
+本プロジェクトを通して，ビッグデータの分散並列処理の原理を理解し，実装す
+ることができた．また，機械学習の理論を理解し，分散並列処理に適用できた．
+%%%%%%%%%%%%%%%%%%
 \section{評価}
 %%%%%%%%%%%%%%%%%%
 \begin{table}[hbtp]
@@ -237,17 +240,21 @@ ACU(PR)& 0.8859 &0.9123 \\ \hline
 \caption{評価}
 \label{tab:評価}
 \fontsize{9pt}{10pt}\selectfont
-\begin{tabular}{c|c||c} \hline
+\begin{tabular}{c|c||l} \hline
  学籍番号&氏名     &評価   \\ \hline \hline
-16344201&井上 聖也& うわああああああああああああああああああああああああ
-		 ああああああああああああああああ    \\ \hline
-16344216&田中 良道& 0.002 \\ \hline
-16344217&津上 祐典& 25    \\ \hline 
-15344229&沈 歩偉　& 91.92 \\ \hline
+16344201&井上 聖也&機械学習のプログラムを作ってくれた．理論やプログラム
+		 に関して色々教えてもらった．\\ \hline
+16344216&田中 良道& HadoopとSparkについて調査してくれた．通信エラー
+		 の解決法など色々調査してくれた．\\ \hline
+ 16344217&津上 祐典& 機械学習の理論，プログラムを担当した．機械学習や分
+		 散処理のの理論の方は理解できたが，
+ プログラムの方ではあまり貢献できなかった．\\ \hline 
+15344229&沈 歩偉　& Hadoop,Sparkの完全分散処理環境を構築してくれた．実行
+		 時間の比較実験などしっかりやってくれた．また，
+		 Hadoop,Sparkのインストールに困っている時，手伝ってくれた． \\ \hline
 \end{tabular}
 \end{table}
 
-\newpage
 %参考文献
 \begin{thebibliography}{99}
 \addcontentsline{toc}{section}{参考文献}
