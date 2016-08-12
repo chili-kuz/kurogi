@@ -49,23 +49,24 @@
 %%%%%%%%%%%%%%%%%%%
  \section{テーマ}
 %%%%%%%%%%%%%%%%%%
-Spark,Hadoopを用いた機械学習によるスパムメールの分類と画像の多クラス分類
+SparkとHadoopを用いた分散機械学習によるクラス分類　-スパムメールの検出と
+画像認識
 %%%%%%%%%%%%%%%%%%%
 \section{概要}
 %%%%%%%%%%%%%%%%%%%
-はじめに，Hadoop,Spark,機械学習の原理ついて述べ，最後に実行結果と考察を
+はじめに，Hadoop，Spark，機械学習の原理ついて述べ，最後に実行結果と考察を
 示す．
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Hadoop}
 %%%%%%%%%%%%%%%%%%%%%%%
-Hadoopはビッグデータを複数のPCを用いて分散並列処理を可能にするフレームワークであ
+Hadoopとはビッグデータを複数のPCを用いて分散並列処理を可能にするフレームワークであ
 る．ー台マスターサーバとその配下にある複数のスレーブサーバによって分散
 並列処理を行う．
 Hadoopは分散ファイルシステム(Hadoop Distributed File
 System)，並列分散処理フレームワーク(MapReduce
 Framework)より構成されている．分散ファイルシステムとは複数のスレーブサーバを一つのストレー
-ジとして扱うファイルシステムである．身近な例でクラウドやネットワー
-クHDD(NAS)などがある．並列分散処理フレームワークでは与えられたデー
+ジとして扱うファイルシステムである．
+分散並列処理フレームワークでは与えられたデー
 タから欲しいデータの抽出と分解するMap処理，それらのデータを集計する
 Reduce処理が行われる．MapReduce処理を複数のスレーブサーバで行うことで分
 散処理を可能にし，ビッグデータを効率よく扱うことができる．
@@ -94,28 +95,42 @@ Hdp第2班では，Sparkを用いた．次節にて，Sparkについて説明す
 \subsection{Spark}
 %%%%%%%%%%%%%%%%%%%%%%
 SparkとはHadoop同様，分散並列処理を可能にするフレームワークである．Spark
-自身はHDFSを持っておらず，HadoopのHDFSを利用することが出来る．Sparkでは
-機械学習用ライブラリMLlibが用意されており，機械学習の分散並列処理が可能
-である．使用可能な言語はJava，Python，R言語である．Hadoopは一つの処理が
-終わるたびにHDFSに書き込まなければならないが，Sparkではインメモリに書き
-込むことで，一つの処理ごとにHDFSに書き込む必要が無く，繰り返し処理に強
-い特長がある．また，機械学習用のライブラリとしてMLlibが用意されている．
-SparkはRDD(Resillient Distributed Datasets)
-
-
+自身はHDFSを持っておらず，HadoopのHDFSを利用することが出来る．Hadoopは一
+つの処理が終わるたびにHDFSに書き込まなければならないが，Sparkではインメ
+モリを用いることで
+一つの処理ごとにHDFSに書き込む必要が無く，処理を高速化している．図
+\ref{fig:Hadoop_vs_Spark}にHadoopの場合とSparkとHadoopを組み合わせた場合
+の処理の流れを示す．図\ref{fig:hs}では，まず，大きなデータを
+MapReduceで加工し，その後Sparkで分散処理している．
 %
-% \begin{figure}
- % \begin{center}
-  % \subfigure[Hadoop]{%
-   %\includegraphics[width=170mm]{fig/Hadoop_d.eps}}%
-   %\\
-   %\subfigure[Spark]{%
-   %\includegraphics[width=170mm]{fig/Spark_d.eps}}%
-  %\end{center}
-  %\caption{HadoopとSparkの違い}
-  %\label{fig:Hadoop_vs_Spark}
- %\end{figure}
+ \begin{figure}
+  \begin{center}
+   \subfigure[Hadoopのみ]{%
+   \includegraphics[width=170mm]{fig/Hadoop_d.eps}}%
+   \\
+   \subfigure[HadoopとSparkの組み合わせ]{\label{fig:hs}
+   \includegraphics[width=120mm]{fig/Hadoop_spark.eps}}%
+  \end{center}
+  \caption{HadoopとSpark}
+  \label{fig:Hadoop_vs_Spark}
+ \end{figure}
 %
+Sparkのデータ処理にはRDD(Resilient Distributed Dataset)と呼ばれるデータ
+構造を用いている．RDDは大量のデータを要素として保持する分散コレクション
+である．RDD内はパーティションというかたまりに分割されており，これが分散
+処理の単位である．RDDをパーティションごとに複数のPCで分散処理することで
+一台のPCでは難しいビッグデータの分散処理が可能となる．
+%
+\begin{figure}[htbp]
+ \begin{center}
+  \includegraphics[width=80mm]{fig/RDD.eps}
+  \caption{RDDの構造}
+  \label{fig:RDD}
+ \end{center}
+\end{figure}
+%
+また，機械学習用ライブラリMLlibが用意されており，機械学習の分散並列処理が可能
+である．使用可能な言語はJava，Python，R言語である．
 %%%%%%%%%%%%%%%%%%%%
 \subsection{機械学習（Machine Learning）}
 %%%%%%%%%%%%%%%%%%%%
@@ -138,7 +153,7 @@ Spambase DataSet\cite{Spam}を用いた．
  f_\theta (x) = \frac{1}{1+e^{-\theta x}}
 \end{equation}
 %
-\begin{figure}[htbp]
+\begin{figure}[bp]
  \begin{center}
   \includegraphics[width=60mm]{fig/sigmoid.eps}
   \caption{シグモイド関数}
@@ -163,27 +178,21 @@ SparkのMLlibで用意されている準ニュートン法を用いてパラメ�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 二つ目の学習テーマとして画像の分類を行った．データセットとしてCIFAR-10\cite{CIFAR}を
 用いた．CIFAR-10は60000枚の画像からなり，うち50000枚が訓練用画
-像であり，残り10000枚はテスト用画像である．
-
-%%%%%%%%%%%%%%%%%
-\subsection{実験}
-%%%%%%%%%%%%%%%%%
-その結果を表\ref{tab:実験
-結果}に示す．また，ロジスティック回帰モデルで設定パラメータを実
-験的にチューニングして求めた際の結果を表\ref{tab:パラメータのチューニング前後の比較}に示
-す．
+像であり，残り10000枚はテスト用画像である．オープンライブラリの
+scikit-imageをHOG特徴量を抽出し，前節と同じくロジスティック回帰で画像認
+識（他クラス分類）を行った．
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{実行条件}
+\subsection{実行条件}
 %%%%%%%%%%%%%%%%%%%%%%%%
-
+前述した２つのテーマの実行条件を表\ref{tab:実行条件}に示す．
 \begin{table}[hbtp]
 \centering
 \caption{実行条件}
 \label{tab:実行条件}
 \fontsize{9pt}{10pt}\selectfont
  \begin{tabular}{|c||c|c|} \hline
- テーマ &スパムメールの検出& 画像の分類\\ \hline \hline
+ テーマ &スパムメールの検出& 画像認識\\ \hline \hline
 データセット& Spambase Data Set& CIFAR-10\\ \hline
   学習アルゴリズム& \multicolumn{2}{|c|}{ロジスティック回帰}\\ \hline
   評価法&\multicolumn{2}{|c|}{ホールドアウト法}\\ \hline
@@ -192,34 +201,27 @@ SparkのMLlibで用意されている準ニュートン法を用いてパラメ�
 \end{tabular}
 \end{table}
 
+
 \begin{table}[hbt]
 \centering
-\caption{実験結果}
+\caption{スパムメールの検出の結果}
 \label{tab:実験結果}
 \fontsize{9pt}{10pt}\selectfont
 \begin{tabular}{|c|c|c|c|c|c|} \hline
- &非スパム再現率&スパム再現率&非スパム適合率&スパム適合率&AUC(PR) \\ \hline
-SVM& 76.13\%& 85.79\%& 88.90\%& 70.61\% & 0.8105 \\ \hline
-ロジスティック回帰&91.92\% & 90.41\% & 93.48\% & 88.21\% & 0.9123 \\ \hline
-ナイーブベイズ& 83.85\% & 66.25\% & 78.79\%  & 73.28\% & 0.7652  \\ \hline
+非スパム再現率&スパム再現率&非スパム適合率&スパム適合率&AUC(PR) \\ \hline
+91.92\% & 90.41\% & 93.48\% & 88.21\% & 0.9123 \\ \hline
 \end{tabular}
 \end{table}
 
 \begin{table}[hbt]
 \centering
-\caption{パラメータのチューニング前後の比較}
-\label{tab:パラメータのチューニング前後の比較}
+\caption{画像認識の結果}
+ \label{tab:実験結果2}
 \fontsize{9pt}{10pt}\selectfont
-\begin{tabular}{|c|c|c|} \hline
- &チューニング前&チューニング後 \\ \hline
-正則化関数& L2ノルム & L1ノルム \\ \hline
-正則化係数&0.01 & 0.002 \\ \hline
-学習繰り返し回数  &10 & 25  \\ \hline \hline
-非スパム再現率& 88.60\%& 91.92\% \\ \hline
-スパム再現率& 88.81\%& 90.41\% \\ \hline
-非スパム適合率& 92.21\%& 93.48\% \\ \hline
-スパム適合率& 83.89\%& 88.21\% \\ \hline
-ACU(PR)& 0.8859 &0.9123 \\ \hline
+ \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c} \hline
+  &Airplane&automobile&Bird&Cat&Derr&Dog&Frog&Horse&Ship&Truck \\ \hline
+ Precision&55.53\% & 64.49\% & 42.98\% & 38.21\%& 42.69\% & 45.91\% & 51.63\% & 57.36\% & 57.91\% & 62.30\% \\ \hline
+ Recall&55.70\% & 66.10\% & 35.80\% & 29.80\% &42.90\% & 43.80\% &63.40\% & 60.40\% & 62.20\% & 65.10\%  \\ \hline
 \end{tabular}
 \end{table}
 
@@ -240,20 +242,21 @@ ACU(PR)& 0.8859 &0.9123 \\ \hline
 \caption{評価}
 \label{tab:評価}
 \fontsize{9pt}{10pt}\selectfont
-\begin{tabular}{c|c||l} \hline
+\begin{tabular}{c|c||p{100mm}} \hline
  学籍番号&氏名     &評価   \\ \hline \hline
+ 16344217&自分& 機械学習の理論，プログラムを担当した．機械学習や分
+		 散処理のの理論の方は理解できたが，
+		 プログラムの方ではあまり貢献できなかった．\\ \hline
 16344201&井上 聖也&機械学習のプログラムを作ってくれた．理論やプログラム
 		 に関して色々教えてもらった．\\ \hline
 16344216&田中 良道& HadoopとSparkについて調査してくれた．通信エラー
-		 の解決法など色々調査してくれた．\\ \hline
- 16344217&津上 祐典& 機械学習の理論，プログラムを担当した．機械学習や分
-		 散処理のの理論の方は理解できたが，
- プログラムの方ではあまり貢献できなかった．\\ \hline 
+		 の解決法など色々調査してくれた．\\ \hline 
 15344229&沈 歩偉　& Hadoop,Sparkの完全分散処理環境を構築してくれた．実行
 		 時間の比較実験などしっかりやってくれた．また，
 		 Hadoop,Sparkのインストールに困っている時，手伝ってくれた． \\ \hline
 \end{tabular}
 \end{table}
+
 
 %参考文献
 \begin{thebibliography}{99}

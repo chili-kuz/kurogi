@@ -1,15 +1,15 @@
-This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016) (preloaded format=platex 2016.6.22)  10 AUG 2016 14:22
+This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.euc) (TeX Live 2015) (preloaded format=platex 2016.5.23)  12 AUG 2016 16:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **final.tex
 (./final.tex
-pLaTeX2e <2016/06/10>+1 (based on LaTeX2e <2016/03/31> patch level 1)
-Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
-(/usr/local/texlive/2016/texmf-dist/tex/platex/base/jarticle.cls
+pLaTeX2e <2006/11/10> (based on LaTeX2e <2016/03/31> patch level 0)
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/platex/base/jarticle.cls
 Document Class: jarticle 2006/06/27 v1.6 Standard pLaTeX class
 \c@@paper=\count81
-(/usr/local/texlive/2016/texmf-dist/tex/platex/base/jsize12.clo
+(/usr/local/texlive/2015/texmf-dist/tex/platex/base/jsize12.clo
 File: jsize12.clo 2006/06/27 v1.6 Standard pLaTeX file (size option)
 )
 \c@part=\count82
@@ -24,61 +24,61 @@ File: jsize12.clo 2006/06/27 v1.6 Standard pLaTeX file (size option)
 \belowcaptionskip=\skip42
 \symmincho=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
-(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 593.
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 601.
 \toclineskip=\dimen118
 \@lnumwidth=\dimen119
 \bibindent=\dimen120
 \heisei=\count90
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/06/02 v1.0s Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: dvipdfmx.def on input line 99.
+Package graphics Info: Driver file: dvipdfmx.def on input line 95.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/dvipdfmx-def/dvipdfmx.def
-File: dvipdfmx.def 2016/04/06 v4.08 LaTeX color/graphics driver for dvipdfmx (T
+(/usr/local/texlive/2015/texmf-dist/tex/latex/dvipdfmx-def/dvipdfmx.def
+File: dvipdfmx.def 2015/11/04 v4.07 LaTeX color/graphics driver for dvipdfmx (T
 eX Live/ChoF)
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )))
 \Gin@req@height=\dimen121
 \Gin@req@width=\dimen122
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2016/03/10 v2.15b AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
 \ex@=\dimen123
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen124
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count91
@@ -119,7 +119,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip46
 \subfigcapskip=\skip47
@@ -135,15 +135,15 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip50
 \subfig@bottom=\skip51
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/comment/comment.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write3
 
 Excluding comment 'comment')
-(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen134
 \extrarowheight=\dimen135
@@ -178,34 +178,36 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <17.28> not available
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <17.28> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 50.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 59.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 60.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 59.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 60.
 File: fig/Hadoop.eps Graphic file (type eps)
 <fig/Hadoop.eps>
 File: fig/MapReduce.eps Graphic file (type eps)
- <fig/MapReduce.eps> [1
+ <fig/MapReduce.eps>
+File: fig/Hadoop_d.eps Graphic file (type eps)
+ <fig/Hadoop_d.eps>
+File: fig/Hadoop_spark.eps Graphic file (type eps)
+ <fig/Hadoop_spark.eps>
+File: fig/RDD.eps Graphic file (type eps)
 
-]
+<fig/RDD.eps> [1
+
+] [2]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 124.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 139.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 124.
- [2]
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 139.
+ [3]
 File: fig/sigmoid.eps Graphic file (type eps)
- <fig/sigmoid.eps> [3] [4]
-Overfull \hbox (321.22859pt too wide) in paragraph at lines 243--256
- [][] 
- []
-
-[5] (./final.aux) ) 
+ <fig/sigmoid.eps> [4] [5] [6] (./final.aux) ) 
 Here is how much of TeX's memory you used:
- 1711 strings out of 493683
- 21353 string characters out of 6149647
- 85906 words of memory out of 5000000
- 5283 multiletter control sequences out of 15000+600000
+ 1711 strings out of 493717
+ 21303 string characters out of 6150720
+ 86058 words of memory out of 5000000
+ 5259 multiletter control sequences out of 15000+600000
  18494 words of font info for 72 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,8n,24p,237b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,9n,24p,237b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on final.dvi (5 pages, 14032 bytes).
+Output written on final.dvi (6 pages, 15024 bytes).
