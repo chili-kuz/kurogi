@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1470985726 "final.dvi" "final.pdf" "final" 1470985727
-  "final.dvi" 1470985726 15024 c2b348ac388b312364dfbaaef1cce3fe "latex"
+["dvipdf"] 1471271132 "final.dvi" "final.pdf" "final" 1471271133
+  "final.dvi" 1471271132 19148 8d9009f27e3425dcbd095e1af8af2eab "latex"
   (generated)
   "final.pdf"
-["latex"] 1470985726 "final.tex" "final.dvi" "final" 1470985727
+["latex"] 1471271132 "final.tex" "final.dvi" "final" 1471271133
   "/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty" 1335995445 8253 3bdedc8409aa5d290a2339be6f09af03 ""
   "/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty" 1335995445 18425 775b341047ce304520cc7c11ca41392e ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1456875012 2210 5c54ab129b848a5071554186d0168766 ""
@@ -29,9 +29,9 @@
   "fig/MapReduce.eps" 1470972629 27091 6edbdcc9feca2ed21e4055ae1152a87d ""
   "fig/RDD.eps" 1470981233 37609 c60de905b75f51188822e86adeaa864a ""
   "fig/sigmoid.eps" 1470972629 16410 85a23eb7e81eda870c6fc225822e70a0 ""
-  "final.aux" 1470985726 2432 241e733b2b35afb013aee5b8524734c3 ""
-  "final.tex" 1470985724 10961 bbfeab753d934dbf5b4cc934b3cce024 ""
+  "final.aux" 1471271132 2442 a46f764e231c34d4ed394576a1f1b149 ""
+  "final.tex" 1471271130 13895 f779e5f77b5a187cce6f5111883e25df ""
   (generated)
-  "final.dvi"
   "final.log"
+  "final.dvi"
   "final.aux"

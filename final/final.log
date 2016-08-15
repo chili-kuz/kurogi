@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.euc) (TeX Live 2015) (preloaded format=platex 2016.5.23)  12 AUG 2016 16:08
+This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.euc) (TeX Live 2015) (preloaded format=platex 2016.5.23)  15 AUG 2016 23:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -184,30 +184,37 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 File: fig/Hadoop.eps Graphic file (type eps)
 <fig/Hadoop.eps>
 File: fig/MapReduce.eps Graphic file (type eps)
- <fig/MapReduce.eps>
+ <fig/MapReduce.eps> [1
+
+]
 File: fig/Hadoop_d.eps Graphic file (type eps)
  <fig/Hadoop_d.eps>
 File: fig/Hadoop_spark.eps Graphic file (type eps)
- <fig/Hadoop_spark.eps>
+
+<fig/Hadoop_spark.eps>
 File: fig/RDD.eps Graphic file (type eps)
-
-<fig/RDD.eps> [1
-
-] [2]
+ <fig/RDD.eps> [2] [3]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 139.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 148.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 139.
- [3]
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 148.
 File: fig/sigmoid.eps Graphic file (type eps)
- <fig/sigmoid.eps> [4] [5] [6] (./final.aux) ) 
+ <fig/sigmoid.eps> [4]
+
+LaTeX Warning: Reference `tab:time' on page 5 undefined on input line 203.
+
+[5] [6] [7] (./final.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1711 strings out of 493717
- 21303 string characters out of 6150720
- 86058 words of memory out of 5000000
- 5259 multiletter control sequences out of 15000+600000
- 18494 words of font info for 72 fonts, out of 8000000 for 9000
+ 1714 strings out of 493717
+ 21337 string characters out of 6150720
+ 84058 words of memory out of 5000000
+ 5261 multiletter control sequences out of 15000+600000
+ 18683 words of font info for 73 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  27i,9n,24p,237b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on final.dvi (6 pages, 15024 bytes).
+Output written on final.dvi (7 pages, 19148 bytes).
